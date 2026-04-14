@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Based Digital Proof-of-Life & Safety Monitoring System</title>
+    <meta name="description" content="An AI-powered safety monitoring system for elderly people living alone. Passive smartphone monitoring, behavioral analysis, and automatic alert generation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <i class="fas fa-shield-heart"></i>
+                <span>SafeGuard<span class="accent">AI</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#technologies">Tech Stack</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <div id="navAuthContainer">
+                    <button class="btn btn-primary" id="navLoginBtn" style="padding: 0.5rem 1rem; font-size: 0.9rem; margin-right: 1rem;"><i class="fas fa-user-circle"></i> Login</button>
+                </div>
+                <div id="navUserContainer" style="display: none; align-items: center; gap: 1rem; margin-right: 1rem;">
+                    <span id="navUserName" style="font-weight: 600; font-size: 0.9rem;"></span>
+                    <button class="btn btn-outline" id="navLogoutBtn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">Logout</button>
+                </div>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO / HOME ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-particles" id="particles"></div>
+        <div class="container hero-content">
+            <div class="hero-text animate fade-up">
+                <span class="hero-badge"><i class="fas fa-robot"></i> AI-Powered Safety</span>
+                <h1>AI-Based Digital<br><span class="gradient-text">Proof-of-Life &amp; Safety</span><br>Monitoring System</h1>
+                <p class="hero-subtitle">Empowering caregivers with intelligent, passive monitoring for elderly people living alone — using just their smartphone.</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn btn-primary"><i class="fas fa-play-circle"></i> Explore Features</a>
+                    <a href="#how-it-works" class="btn btn-outline"><i class="fas fa-info-circle"></i> How It Works</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-count="24">0</span><span class="stat-suffix">/7</span>
+                        <span class="stat-label">Monitoring</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="0">0</span>
+                        <span class="stat-label">Hardware Needed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-count="100">0</span><span class="stat-suffix">%</span>
+                        <span class="stat-label">Privacy Safe</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image animate fade-up delay-2">
+                <div class="hero-image-glow"></div>
+                <img src="images/hero-illustration.png" alt="AI Safety Monitoring Illustration">
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,40 1440,60 L1440,120 L0,120 Z" fill="var(--bg-primary)"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <span class="section-tag">The Problem</span>
+                <h2>Why This Project <span class="gradient-text">Matters</span></h2>
+                <p class="section-desc">Millions of elderly individuals live alone, often without timely access to help during emergencies.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card animate fade-up">
+                    <div class="about-icon"><i class="fas fa-user-clock"></i></div>
+                    <h3>Aging Population Crisis</h3>
+                    <p>By 2050, the global population aged 60+ will reach 2.1 billion. Many live alone without regular human contact or monitoring.</p>
+                </div>
+                <div class="about-card animate fade-up delay-1">
+                    <div class="about-icon"><i class="fas fa-ambulance"></i></div>
+                    <h3>Delayed Emergency Response</h3>
+                    <p>Falls, strokes, and heart attacks can go unnoticed for hours or days. The average response time for an unmonitored elderly person is critically long.</p>
+                </div>
+                <div class="about-card animate fade-up delay-2">
+                    <div class="about-icon"><i class="fas fa-heart-crack"></i></div>
+                    <h3>Social Isolation</h3>
+                    <p>Loneliness accelerates cognitive decline and increases the risk of depression. Regular check-ins are vital but often impractical for families.</p>
+                </div>
+                <div class="about-card animate fade-up delay-3">
+                    <div class="about-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Our Solution</h3>
+                    <p>We leverage smartphone data and AI to passively monitor daily routines, detect anomalies, and alert caregivers — no wearables, no cameras, no invasion of privacy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FEATURES ==================== -->
+    <section class="section section-alt" id="features">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <span class="section-tag">Capabilities</span>
+                <h2>Powerful <span class="gradient-text">Features</span></h2>
+                <p class="section-desc">Built with cutting-edge AI to provide comprehensive, non-intrusive safety monitoring.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate fade-up">
+                    <div class="feature-icon"><i class="fas fa-mobile-screen-button"></i></div>
+                    <h3>Passive Smartphone Monitoring</h3>
+                    <p>Tracks phone usage patterns, screen time, and call activity without requiring any action from the user.</p>
+                    <div class="feature-tag">Non-Intrusive</div>
+                </div>
+                <div class="feature-card animate fade-up delay-1">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Behavioral Pattern Learning</h3>
+                    <p>Machine learning models learn individual daily routines and establish a personalized behavioral baseline.</p>
+                    <div class="feature-tag">AI-Powered</div>
+                </div>
+                <div class="feature-card animate fade-up delay-2">
+                    <div class="feature-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+                    <h3>Anomaly Detection</h3>
+                    <p>Isolation Forest and clustering algorithms detect deviations from normal patterns that may indicate distress.</p>
+                    <div class="feature-tag">Real-Time</div>
+                </div>
+                <div class="feature-card animate fade-up delay-1">
+                    <div class="feature-icon"><i class="fas fa-bell"></i></div>
+                    <h3>Automatic Alert System</h3>
+                    <p>Instantly notifies caregivers and family members when unusual activity patterns are detected.</p>
+                    <div class="feature-tag">Instant Alerts</div>
+                </div>
+                <div class="feature-card animate fade-up delay-2">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Caregiver Dashboard</h3>
+                    <p>A comprehensive web dashboard showing activity summaries, health status, alerts, and historical trends.</p>
+                    <div class="feature-tag">Visual Analytics</div>
+                </div>
+                <div class="feature-card animate fade-up delay-3">
+                    <div class="feature-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Privacy-First Design</h3>
+                    <p>No cameras, no microphones, no GPS tracking. Only metadata patterns are analyzed to respect user privacy.</p>
+                    <div class="feature-tag">Secure</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HOW IT WORKS ==================== -->
+    <section class="section" id="how-it-works">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <span class="section-tag">Process</span>
+                <h2>How It <span class="gradient-text">Works</span></h2>
+                <p class="section-desc">A streamlined pipeline from data collection to caregiver notification.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item animate fade-left">
+                    <div class="timeline-number">01</div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="fas fa-database"></i></div>
+                        <h3>Data Collection</h3>
+                        <p>The smartphone passively collects usage data — screen time, app usage frequency, call logs, and charging patterns — without user intervention.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate fade-right">
+                    <div class="timeline-number">02</div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="fas fa-filter"></i></div>
+                        <h3>Data Preprocessing</h3>
+                        <p>Raw data is cleaned, normalized, and transformed into structured features suitable for machine learning analysis.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate fade-left">
+                    <div class="timeline-number">03</div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="fas fa-gears"></i></div>
+                        <h3>ML Model Training</h3>
+                        <p>Decision Trees, K-Means Clustering, and Isolation Forest algorithms learn the user's unique behavioral patterns over time.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate fade-right">
+                    <div class="timeline-number">04</div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="fas fa-triangle-exclamation"></i></div>
+                        <h3>Anomaly Detection</h3>
+                        <p>The system continuously compares real-time data against the learned baseline to identify significant deviations that may signal an emergency.</p>
+                    </div>
+                </div>
+                <div class="timeline-item animate fade-left">
+                    <div class="timeline-number">05</div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon"><i class="fas fa-paper-plane"></i></div>
+                        <h3>Alert Generation</h3>
+                        <p>When anomalies are confirmed, the system triggers immediate alerts to registered caregivers via the dashboard, SMS, or push notifications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TECHNOLOGIES ==================== -->
+    <section class="section section-alt" id="technologies">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <span class="section-tag">Tech Stack</span>
+                <h2>Technologies <span class="gradient-text">Used</span></h2>
+                <p class="section-desc">Built with industry-standard tools and frameworks for reliability and performance.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card animate fade-up">
+                    <div class="tech-icon"><i class="fab fa-python"></i></div>
+                    <h3>Python</h3>
+                    <p>Core backend language for data processing, ML model training, and API development.</p>
+                </div>
+                <div class="tech-card animate fade-up delay-1">
+                    <div class="tech-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Machine Learning</h3>
+                    <p>Decision Tree, K-Means Clustering, Isolation Forest for pattern recognition and anomaly detection.</p>
+                </div>
+                <div class="tech-card animate fade-up delay-2">
+                    <div class="tech-icon"><i class="fas fa-fire"></i></div>
+                    <h3>Firebase / SQLite</h3>
+                    <p>Cloud-based and local database solutions for storing user data, alerts, and configuration.</p>
+                </div>
+                <div class="tech-card animate fade-up delay-3">
+                    <div class="tech-icon"><i class="fas fa-desktop"></i></div>
+                    <h3>Web Dashboard</h3>
+                    <p>HTML, CSS, JavaScript-based responsive dashboard for caregivers to monitor status and manage alerts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SYSTEM ARCHITECTURE ==================== -->
+    <section class="section" id="architecture">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <span class="section-tag">Architecture</span>
+                <h2>System <span class="gradient-text">Architecture</span></h2>
+                <p class="section-desc">End-to-end data flow from the user's device to caregiver notification.</p>
+            </div>
+            <div class="architecture-flow animate fade-up">
+                <div class="arch-node">
+                    <div class="arch-icon"><i class="fas fa-user"></i></div>
+                    <span>Elderly User</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                    <div class="arch-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <span>Smartphone Data</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node highlight">
+                    <div class="arch-icon"><i class="fas fa-microchip"></i></div>
+                    <span>AI Model</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                    <div class="arch-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <span>Alert System</span>
+                </div>
+                <div class="arch-arrow"><i class="fas fa-arrow-right"></i></div>
+                <div class="arch-node">
+                    <div class="arch-icon"><i class="fas fa-user-nurse"></i></div>
+                    <span>Caregiver</span>
+                </div>
+            </div>
+            <div class="arch-details animate fade-up delay-1">
+                <div class="arch-detail-card">
+                    <h4><i class="fas fa-cloud-arrow-up"></i> Data Layer</h4>
+                    <p>Firebase stores usage data securely, with SQLite as a local fallback for offline functionality.</p>
+                </div>
+                <div class="arch-detail-card">
+                    <h4><i class="fas fa-brain"></i> Processing Layer</h4>
+                    <p>Python-based ML pipeline processes data in real-time, updating behavioral models continuously.</p>
+                </div>
+                <div class="arch-detail-card">
+                    <h4><i class="fas fa-bell"></i> Notification Layer</h4>
+                    <p>Multi-channel alert delivery via dashboard, SMS, and push notifications for immediate response.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DASHBOARD ==================== -->
+    <section class="section section-alt" id="dashboard">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <span class="section-tag">Interface</span>
+                <h2>Caregiver <span class="gradient-text">Dashboard</span></h2>
+                <p class="section-desc">An intuitive web interface for caregivers to monitor elderly users in real-time.</p>
+            </div>
+            <div class="dashboard-showcase animate fade-up" id="authDashboardPanel" style="display: none;">
+                <div class="test-panel">
+                    <h3><i class="fas fa-microchip"></i> Live Activity Verification</h3>
+                    <p>Trigger the API to run a simulated AI verification of proof-of-life.</p>
+                    <div class="test-controls">
+                        <select id="verifyMethod" class="form-control">
+                            <option value="face-scan">Face Scan</option>
+                            <option value="voice-scan">Voice Scan</option>
+                            <option value="blink-detection">Blink Detection</option>
+                            <option value="general-ai">General AI</option>
+                        </select>
+                        <button class="btn btn-primary" id="btnSimulateVerify"><i class="fas fa-camera"></i> Run Scan</button>
+                    </div>
+                    <div id="verifyResult" class="form-status" style="display:none; margin-top: 1rem;"></div>
+                </div>
+            </div>
+            <div class="dashboard-showcase animate fade-up" id="mockDashboardPanel">
+                <div class="dashboard-image">
+                    <div class="browser-chrome">
+                        <div class="browser-dots"><span></span><span></span><span></span></div>
+                        <span class="browser-url">safeguard-ai.dashboard.com</span>
+                    </div>
+                    <img src="images/dashboard-mockup.png" alt="SafeGuard AI Dashboard Mockup">
+                </div>
+            </div>
+            <div class="dashboard-features">
+                <div class="dash-feature animate fade-up">
+                    <i class="fas fa-chart-pie"></i>
+                    <h4>Activity Summary</h4>
+                    <p>Daily overview of phone usage, screen time, and call patterns.</p>
+                </div>
+                <div class="dash-feature animate fade-up delay-1">
+                    <i class="fas fa-bell"></i>
+                    <h4>Alert Feed</h4>
+                    <p>Real-time notifications for detected anomalies with severity levels.</p>
+                </div>
+                <div class="dash-feature animate fade-up delay-2">
+                    <i class="fas fa-circle-check"></i>
+                    <h4>Status Indicator</h4>
+                    <p>At-a-glance safety status — Normal, Warning, or Critical.</p>
+                </div>
+                <div class="dash-feature animate fade-up delay-3">
+                    <i class="fas fa-clock-rotate-left"></i>
+                    <h4>History & Trends</h4>
+                    <p>Historical data visualization for long-term behavior analysis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ADVANTAGES ==================== -->
+    <section class="section" id="advantages">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <span class="section-tag">Benefits</span>
+                <h2>Key <span class="gradient-text">Advantages</span></h2>
+                <p class="section-desc">Why our system stands out from traditional monitoring solutions.</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card animate fade-up">
+                    <div class="advantage-icon"><i class="fas fa-coins"></i></div>
+                    <h3>Low Cost</h3>
+                    <p>Uses existing smartphones — no expensive hardware, wearables, or sensor installations required.</p>
+                </div>
+                <div class="advantage-card animate fade-up delay-1">
+                    <div class="advantage-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>No Extra Hardware</h3>
+                    <p>Works entirely through the elderly person's existing smartphone — zero additional devices needed.</p>
+                </div>
+                <div class="advantage-card animate fade-up delay-2">
+                    <div class="advantage-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3>Privacy-Friendly</h3>
+                    <p>No cameras, microphones, or GPS. Only usage metadata is analyzed, ensuring complete privacy.</p>
+                </div>
+                <div class="advantage-card animate fade-up delay-3">
+                    <div class="advantage-icon"><i class="fas fa-wand-magic-sparkles"></i></div>
+                    <h3>Fully Automatic</h3>
+                    <p>Once set up, the system runs autonomously — no daily input needed from the elderly user.</p>
+                </div>
+                <div class="advantage-card animate fade-up delay-1">
+                    <div class="advantage-icon"><i class="fas fa-expand"></i></div>
+                    <h3>Scalable</h3>
+                    <p>Can monitor multiple elderly individuals simultaneously through a single caregiver dashboard.</p>
+                </div>
+                <div class="advantage-card animate fade-up delay-2">
+                    <div class="advantage-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Real-Time Alerts</h3>
+                    <p>Instant notification delivery ensures caregivers can respond within minutes, not hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TEAM ==================== -->
+    <section class="section section-alt" id="team">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <span class="section-tag">Our Team</span>
+                <h2>Meet The <span class="gradient-text">Team</span></h2>
+                <p class="section-desc">The talented developers behind this project.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card animate fade-up">
+                    <div class="team-avatar"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Team Member 1</h3>
+                    <span class="team-role">Project Lead & ML Developer</span>
+                    <p>Responsible for machine learning model development and system architecture design.</p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="team-card animate fade-up delay-1">
+                    <div class="team-avatar"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Team Member 2</h3>
+                    <span class="team-role">Backend Developer</span>
+                    <p>Handles data preprocessing, API development, and database management.</p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="team-card animate fade-up delay-2">
+                    <div class="team-avatar"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Team Member 3</h3>
+                    <span class="team-role">Frontend Developer</span>
+                    <p>Designs and implements the caregiver dashboard and web interface.</p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="team-card animate fade-up delay-3">
+                    <div class="team-avatar"><i class="fas fa-user-graduate"></i></div>
+                    <h3>Team Member 4</h3>
+                    <span class="team-role">Research & Testing</span>
+                    <p>Conducts research on elderly monitoring systems and handles quality assurance.</p>
+                    <div class="team-socials">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header animate fade-up">
+                <span class="section-tag">Get In Touch</span>
+                <h2>Contact <span class="gradient-text">Us</span></h2>
+                <p class="section-desc">Have questions or want to collaborate? We'd love to hear from you.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info animate fade-up">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>safeguard.ai@project.edu</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Department of Computer Science<br>University Campus</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div>
+                            <h4>Project Type</h4>
+                            <p>Final Year Mini Project<br>Academic Year 2025–2026</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form animate fade-up delay-1" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What's this about?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    <div class="form-status" id="formStatus"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="nav-logo">
+                        <i class="fas fa-shield-heart"></i>
+                        <span>SafeGuard<span class="accent">AI</span></span>
+                    </a>
+                    <p>AI-Based Digital Proof-of-Life & Safety Monitoring System for Elderly Living Alone.</p>
+                    <p class="footer-note">A college mini project demonstrating the potential of AI in elderly care.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Project</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#technologies">Technologies</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Project</h4>
+                    <ul>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                        <li><a href="#advantages">Advantages</a></li>
+                        <li><a href="#team">Team</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SafeGuardAI. All rights reserved. | Mini Project — Department of Computer Science</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== AUTH MODAL ==================== -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeAuthModal"><i class="fas fa-times"></i></button>
+            
+            <!-- Forms Container -->
+            <div class="auth-container">
+                <!-- Login Form -->
+                <form id="loginForm" class="auth-form active">
+                    <h3>Welcome Back</h3>
+                    <p>Enter your details to access the dashboard.</p>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="btnLogin">Login <i class="fas fa-arrow-right"></i></button>
+                    <p class="auth-switch">Don't have an account? <a href="#" id="showSignup">Sign up</a></p>
+                    <div class="form-status" id="loginStatus"></div>
+                </form>
+
+                <!-- Signup Form -->
+                <form id="signupForm" class="auth-form">
+                    <h3>Create Account</h3>
+                    <p>Get started with automatic monitoring.</p>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="signupName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" id="signupEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="signupPassword" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="btnSignup">Create Account <i class="fas fa-plus"></i></button>
+                    <p class="auth-switch">Already registered? <a href="#" id="showLogin">Log in</a></p>
+                    <div class="form-status" id="signupStatus"></div>
+                </form>
+
+                <!-- OTP Form -->
+                <form id="otpForm" class="auth-form">
+                    <h3>Verify OTP</h3>
+                    <p>Check your email for the verification code.</p>
+                    <div class="form-group">
+                        <label>Verification Code</label>
+                        <input type="text" id="otpCode" placeholder="6 Digit Code" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="btnVerifyOtp">Verify Let's Go <i class="fas fa-check"></i></button>
+                    <div class="form-status" id="otpStatus"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
