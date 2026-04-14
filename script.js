@@ -203,7 +203,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ==================== AUTH MODAL ====================
-const API_BASE = '/api';
+// IMPORTANT: Replace with your Render backend URL after deploying the backend
+const API_BASE = window.location.hostname === 'localhost'
+    ? 'http://localhost:5000/api'
+    : 'https://YOUR-BACKEND-NAME.onrender.com/api';
 const authModal = document.getElementById('authModal');
 const navLoginBtn = document.getElementById('navLoginBtn');
 const closeAuthModal = document.getElementById('closeAuthModal');

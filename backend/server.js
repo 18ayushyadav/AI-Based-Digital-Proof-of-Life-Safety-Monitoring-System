@@ -7,11 +7,12 @@ const path = require('path');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json({ extended: false }));
-
-// Serve frontend static files from project root
-app.use(express.static(path.join(__dirname, '..')));
 
 // Define Routes
 app.use('/api/auth', require('./routes/auth'));
