@@ -1,6 +1,7 @@
 const ProofOfLife = require('../models/ProofOfLife');
 const SuspiciousLog = require('../models/SuspiciousLog');
 const User = require('../models/User');
+const Alert = require('../models/Alert');
 
 exports.processVerification = async (req, res) => {
   try {
@@ -14,12 +15,23 @@ exports.processVerification = async (req, res) => {
     }
 
     // ---------------------------------------------------------
-    // SIMULATED AI VERIFICATION
+    // HYBRID VERIFICATION
     // ---------------------------------------------------------
-    // In a real scenario, we'd send 'payload' to a Python microservice, OpenCV, or external API.
-    // For simulation, we randomly determine if it's "alive" or "fake" (with high probability of alive).
-    const randomChance = Math.random();
-    let aiResultStatus = randomChance > 0.1 ? 'alive' : 'fake'; 
+    let aiResultStatus;
+    
+    // If the frontend AI specifically declared no face was found:
+    if (payload === 'NO_FACE_DETECTED' || payload === 'NO_BLINK_DETECTED' || payload === 'NO_VOICE_DETECTED') {
+        aiResultStatus = 'fake';
+    } else if ((method === 'face-scan' || method === 'blink-detection') && payload.startsWith('data:image')) {
+        // If it sends actual image data and didn't fail frontend detection, it passed!
+        aiResultStatus = 'alive';
+    } else if (method === 'voice-scan' && payload === 'VOICE_VERIFIED') {
+        aiResultStatus = 'alive';
+    } else {
+        // For other methods, fallback to simulation
+        const randomChance = Math.random();
+        aiResultStatus = randomChance > 0.1 ? 'alive' : 'fake'; 
+    }
     // ---------------------------------------------------------
 
     // Save the ProofOfLife record
@@ -38,6 +50,13 @@ exports.processVerification = async (req, res) => {
         reason: `Fake detection during ${method}`,
         userId: req.user.id
       });
+      
+      await Alert.create({
+        userId: req.user.id,
+        type: 'Suspicious Activity',
+        message: `Failed AI Verification (${method}).`
+      });
+
       return res.status(403).json({ 
         msg: 'Verification Failed. Suspicious activity detected.',
         result: 'fake'

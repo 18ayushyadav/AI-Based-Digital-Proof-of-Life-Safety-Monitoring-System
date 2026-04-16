@@ -225,10 +225,11 @@ const loginStatus = document.getElementById('loginStatus');
 const signupStatus = document.getElementById('signupStatus');
 const otpStatus = document.getElementById('otpStatus');
 
-const authDashPanel = document.getElementById('authDashboardPanel');
-const mockDashPanel = document.getElementById('mockDashboardPanel');
-const btnSimulate = document.getElementById('btnSimulateVerify');
-const verifyResult = document.getElementById('verifyResult');
+// Removed dash panels from landing page variables
+// const authDashPanel = document.getElementById('authDashboardPanel');
+// const mockDashPanel = document.getElementById('mockDashboardPanel');
+// const btnSimulate = document.getElementById('btnSimulateVerify');
+// const verifyResult = document.getElementById('verifyResult');
 
 let pendingEmail = '';  // holds email between login → OTP step
 
@@ -273,12 +274,8 @@ showLogin.addEventListener('click', e => { e.preventDefault(); switchForm(loginF
 
 // --- Update UI after login / logout ---
 function setLoggedIn(user) {
-    navAuthContainer.style.display = 'none';
-    navUserContainer.style.display = 'flex';
-    navUserName.textContent = `👤 ${user.name}`;
-    authDashPanel.style.display = 'block';
-    mockDashPanel.style.display = 'none';
-    closeModal();
+    // Redirect to the new dashboard page
+    window.location.href = 'dashboard.html';
 }
 
 function setLoggedOut() {
@@ -286,8 +283,7 @@ function setLoggedOut() {
     localStorage.removeItem('safeguard_user');
     navAuthContainer.style.display = 'block';
     navUserContainer.style.display = 'none';
-    authDashPanel.style.display = 'none';
-    mockDashPanel.style.display = 'block';
+    // Removed old UI logic
 }
 
 navLogoutBtn.addEventListener('click', setLoggedOut);
@@ -378,28 +374,4 @@ otpForm.addEventListener('submit', async (e) => {
     }
 });
 
-// ==================== SIMULATE AI VERIFY ====================
-btnSimulate.addEventListener('click', async () => {
-    const method = document.getElementById('verifyMethod').value;
-    btnSimulate.disabled = true;
-    btnSimulate.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Scanning...';
-    verifyResult.style.display = 'none';
-    verifyResult.className = 'form-status';
-    try {
-        const data = await apiCall('/verify', 'POST', {
-            method,
-            payload: 'simulated-media-data'
-        });
-        verifyResult.style.display = 'block';
-        verifyResult.className = 'form-status success';
-        verifyResult.innerHTML = `✅ <strong>${data.result.toUpperCase()}</strong> — Method: ${method} &nbsp;|&nbsp; Record ID: ${data.recordId}`;
-    } catch (err) {
-        verifyResult.style.display = 'block';
-        verifyResult.className = 'form-status error';
-        verifyResult.textContent = '⚠️ ' + err.message;
-    } finally {
-        btnSimulate.disabled = false;
-        btnSimulate.innerHTML = '<i class="fas fa-camera"></i> Run Scan';
-    }
-});
-
+// Verification is now handled on dashboard.html
